@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>metrics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   
+    <ion-item>
+        <ion-label text-wrap>Select number of days you want to see (default:2)</ion-label>
+
+        
+    <ion-select #C multiple="false" cancelText="Return" okText="Ok" (ionChange)="test(C.value)">
+        <ion-select-option  value="1">1 </ion-select-option >
+        <ion-select-option value="2">2</ion-select-option>
+        <ion-select-option value="3">3</ion-select-option>
+        <ion-select-option value="4">4</ion-select-option>
+        <ion-select-option value="5">5</ion-select-option>
+        <ion-select-option value="6">6</ion-select-option>
+        <ion-select-option value="7">7</ion-select-option>
+   
+      </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label text-wrap>
+         The last measure was {{v1}} at {{v2}}
+        </ion-label>
+      </ion-item>
+   
+      <!-- <ion-button  expand = "block" color ="warning"  (click)="ShowChart()">show chart</ion-button>   -->
+      <div echarts *ngIf="show" [options]="options" class="demo-chart"></div> 
+
+    <ion-content padding>
+        <div class = "test">
+            
+          <ion-button  expand = "block" color ="warning"  (click)="ShowChart()">show chart</ion-button>  
+                <ion-row>
+                <ion-col col-6> 
+                  <ion-button color="secondary" expand = "block" (click)="sendPostRequestBeep()" >
+                    <b>Send Beep</b>
+                  </ion-button>
+                </ion-col>
+              
+                <ion-col col-6>
+                  <ion-button color="secondary" expand = "block" (click)="sendPostRequestLED()" >
+                    <b>Send LED</b>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            
+          </div>
+
+</ion-content>

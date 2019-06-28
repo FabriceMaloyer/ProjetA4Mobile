@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content padding>
+    <p>This is your different domain, please choose one</p>
+    <ion-list>
+        <ion-item *ngFor="let item of item"  (click)= 'goToDevices(item)'>
+            <ion-button >
+                {{item.id + " : " + item.domainName}}
+            </ion-button>             
+        </ion-item>
+    </ion-list> 
+
+    <button ion-button (click)="getdomain()">Get Domain</button>  
+ <!-- <ion-list inset>
+  <h2>{{item.parmPurchReqId}}</h2>
+  <button item-right (click)="your_function(your_parameter)"></button>
+  <p>{{item.parmPurchReqName}}</p>
+  <button item-right (click)="your_function(your_parameter)"></button>
+  </ion-list> -->
+</ion-content>
+
+

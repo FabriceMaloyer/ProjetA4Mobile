@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>devices</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <p>There are the differents devices from this domain</p>
+    <p>Please select one :</p>
+    <ion-list>
+        <ion-item *ngFor="let item of item"  (click)= 'goToMetrics(item)' >
+            <ion-button  >
+                {{item.name + " : " + item.type}}
+            </ion-button>             
+        </ion-item>
+       
+    </ion-list> 
+</ion-content>
